@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This module defines a scrip that takes an argument 2 strings"""
 
-from sys import argv
+from sys import argv, stderr
 from os.path import exists
 
 if __name__ == "__main__":
