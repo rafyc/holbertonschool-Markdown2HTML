@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module defines a scrip that takes an argument 2 strings"""
 
 from sys import argv
 from os.path import exists
