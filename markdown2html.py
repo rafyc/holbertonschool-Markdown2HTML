@@ -18,7 +18,8 @@ if __name__ == "__main__":
         with open(argv[2], "w", encoding='utf-8') as html:
             for line in file:
                 nbhash = line.count("#")
-                line = line.lstrip('# ').lstrip('/n')
-                html.write(f'<h{nbhash}>{line.rstrip()}</h{nbhash}>\n')
+                if (nbhash != 0):
+                    line = line.lstrip('# ').lstrip('/n')
+                    html.write(f'<h{nbhash}>{line.rstrip()}</h{nbhash}>\n')
 
     exit(0)
