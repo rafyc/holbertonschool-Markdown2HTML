@@ -13,7 +13,7 @@ if __name__ == "__main__":
     if not exists(argv[1]):
         print(f"Missing {argv[1]}", file=stderr)
         exit(1)
-with open(argv[1], 'r', encoding='utf-8') as file:
+    with open(argv[1], 'r', encoding='utf-8') as file:
     with open(argv[2], "w", encoding='utf-8') as html:
         nextLine = file.readline()
         while nextLine:
