@@ -14,5 +14,4 @@ if __name__ == "__main__":
         print(f"Missing {argv[1]}")
         exit(1)
 
-    else
     exit(0)
