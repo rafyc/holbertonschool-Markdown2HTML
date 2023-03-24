@@ -15,10 +15,10 @@ if __name__ == "__main__":
         exit(1)
 
     with open(argv[1], 'r', encoding='utf-8') as file:
-        newFile = open("README.html", "w")
-        for line in file:
-            nbhash = line.count("#")
-            line = line.lstrip('# ').lstrip('/n')
-            newFile.write(f'<h{nbhash}>{line.rstrip()}</h{nbhash}>\n')
+        with open(argv[2], "w", encoding='utf-8') as html:
+            for line in file:
+                nbhash = line.count("#")
+                line = line.lstrip('# ').lstrip('/n')
+                html.write(f'<h{nbhash}>{line.rstrip()}</h{nbhash}>\n')
 
     exit(0)
