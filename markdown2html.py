@@ -14,4 +14,11 @@ if __name__ == "__main__":
         print(f"Missing {argv[1]}", file=stderr)
         exit(1)
 
+    with open(argv[1], 'r', encoding='utf-8') as file:
+        newFile = open("README.html", "w")
+        for line in file:
+            nbhash = line.count("#")
+            line = line.lstrip('# ').lstrip('/n')
+            newFile.write(f'<h{nbhash}>{line.rstrip()}</h{nbhash}>\n')
+
     exit(0)
