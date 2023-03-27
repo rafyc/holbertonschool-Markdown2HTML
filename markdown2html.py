@@ -29,7 +29,6 @@ if __name__ == "__main__":
                 nbhash = nextLine.count("#")
                 unorderList = nextLine.strip("- ").rstrip()
                 orderedList = nextLine.strip("* ").rstrip()
-                print(orderedList)
                 if nbhash != 0:
                     line = nextLine.lstrip('# ').lstrip('/n')
                     html.write(f'<h{nbhash}>{line.rstrip()}</h{nbhash}>\n')
