@@ -37,7 +37,7 @@ if __name__ == "__main__":
                     html.write('<ul>\n')
                     html.write(f'<li>{unorderList}</li>\n')
                     nextLine = file.readline()
-                    while nextLine.startswith('-'):
+                    while nextLine.startswgith('-'):
                         html.write(f'<li>{nextLine.strip("- ").rstrip()}</'
                                    f'li>\n')
                         nextLine = file.readline()
