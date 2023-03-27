@@ -28,6 +28,8 @@ if __name__ == "__main__":
             while nextLine:
                 nbhash = nextLine.count("#")
                 unorderList = nextLine.strip("- ").rstrip()
+                orderedList = nextLine.strip("* ").rstrip()
+                print(orderedList)
                 if nbhash != 0:
                     line = nextLine.lstrip('# ').lstrip('/n')
                     html.write(f'<h{nbhash}>{line.rstrip()}</h{nbhash}>\n')
@@ -35,11 +37,20 @@ if __name__ == "__main__":
                     html.write('<ul>\n')
                     html.write(f'<li>{unorderList}</li>\n')
                     nextLine = file.readline()
-                    while nextLine.strip().startswith('-'):
+                    while nextLine.startswith('-'):
                         html.write(f'<li>{nextLine.strip("- ").rstrip()}</'
                                    f'li>\n')
                         nextLine = file.readline()
                     html.write('</ul>\n')
+                if '*' in nextLine:
+                    html.write('<ol>\n')
+                    html.write(f'<li>{orderedList}</li>\n')
+                    nextLine = file.readline()
+                    while nextLine.startswith('*'):
+                        html.write(f'<li>{nextLine.strip("* ").rstrip()}</'
+                                   f'li>\n')
+                        nextLine = file.readline()
+                    html.write('</ol>\n')
                 else:
                     nextLine = file.readline()
         exit(0)
