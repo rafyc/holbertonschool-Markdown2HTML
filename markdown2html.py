@@ -35,8 +35,8 @@ if __name__ == "__main__":
                 if '-' in nextLine:
                     html.write('<ul>\n')
                     html.write(f'<li>{unorderList}</li>\n')
-                    nextLine = file.readline()
-                    while nextLine.startswgith('-'):
+                    file.readline()
+                    while nextLine.startswith('-'):
                         html.write(f'<li>{nextLine.strip("- ").rstrip()}</'
                                    f'li>\n')
                         nextLine = file.readline()
@@ -44,7 +44,7 @@ if __name__ == "__main__":
                 if '*' in nextLine:
                     html.write('<ol>\n')
                     html.write(f'<li>{orderedList}</li>\n')
-                    nextLine = file.readline()
+                    file.readline()
                     while nextLine.startswith('*'):
                         html.write(f'<li>{nextLine.strip("* ").rstrip()}</'
                                    f'li>\n')
